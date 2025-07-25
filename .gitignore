@@ -1,0 +1,44 @@
+## ASP.NET Core
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Rider project files
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.swp
+*.sln.ide
+
+# DotCover
+.idea/
+*.dotCover
+
+# Logs
+*.log
+
+# Node modules (jeśli używasz npm/yarn)
+node_modules/
+
+# wwwroot auto-generated
+wwwroot/lib/
+
+# Secrets
+secrets.json
+
+# Publish
+publish/
+*.publish.xml
+
+# Database
+*.mdf
+*.ldf
+*.db
+*.sqlite
