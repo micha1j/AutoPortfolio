@@ -1,10 +1,26 @@
 ﻿@page
-@model IndexModel
+@model AutoPortfolio.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Repozytoria";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@if (Model.Repositories.Count == 0)
+{
+    <p>Brak danych lub trwa ładowanie...</p>
+}
+else
+{
+    <ul>
+        @foreach (var repo in Model.Repositories)
+        {
+            <li>
+                <strong>@repo.Name</strong><br />
+                @repo.Description <br />
+                <a href="@repo.HtmlUrl">Zobacz na GitHubie</a><br />
+                <p>Adres: @(repo.HtmlUrl ?? "[brak danych]")</p>
+                <small>Ostatnia zmiana: @repo.UpdatedAt.ToShortDateString()</small>
+                <hr />
+            </li>
+        }
+    </ul>
+}
